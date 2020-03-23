@@ -18,5 +18,6 @@ func main() {
 
 	fs := http.FileServer(http.Dir(*staticDir))
 	http.Handle("/", handlers.LoggingHandler(os.Stdout, fs))
-	log.Fatal(http.ListenAndServeTLS(":4000", *crtPath, *keyPath, nil))
+	log.Fatal(http.ListenAndServe(":4000", nil))
+	// log.Fatal(http.ListenAndServeTLS(":4000", *crtPath, *keyPath, nil))
 }
