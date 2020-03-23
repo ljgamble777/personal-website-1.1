@@ -1,13 +1,18 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 body {
     font-family: 'Times New Roman', Times, serif;
     color: #363636;
-}
-
-.page {
     display: block;
     width: 500px;
-    height: 100%;
     padding-left: 20px;
+}
+
+.content {
+    margin: 0 0 70px;
 }
 
 .icons {
@@ -27,4 +32,11 @@ body {
 
 .links h4 {
     margin-bottom: 5px;
+}
+
+footer {
+    position: absolute;
+    height: 38px;
+    bottom: 0px;
+    overflow: hidden;
 }

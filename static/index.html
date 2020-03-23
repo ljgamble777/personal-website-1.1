@@ -5,11 +5,11 @@
     </head>
 
     <body>
-        <div class="page">
-            <div class="header">
-                <h2>Henry Fisher</h2>
-            </div>
-            
+        <header>
+            <h2>Henry Fisher</h2>
+        </header>
+        
+        <div class="content"> 
             <div class="about">
                 <p>I am a software engineer and guitarist. Maybe I'll start a blog someday.</p>
             </div>
@@ -34,9 +34,19 @@
                 <a href="http://theindicter.com/military-to-military-seymour-seymour-m-hersh-on-us-intelligence-sharing-in-the-syrian-war/">Military To Military</a> by Seymour Hersch<br>
                 <a href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/">What Is Code?</a> by Paul Ford<br>
                 <a href="https://soundcloud.com/henryperson/gotta-be-with-you">Gotta Be With You</a> by Jew and a Half Men<br>
-
-                
             </div>
         </div>
+        
+        <footer>
+            Last updated: <span id="date">Date</span>
+            <script>
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                lastModified = new Date(document.lastModified)
+                day = lastModified.getDate()
+                month = months[lastModified.getMonth()]
+                year = lastModified.getFullYear()
+                document.getElementById("date").innerHTML = `${month} ${day}, ${year}`
+            </script>
+        </footer>
     </body>
 </html>
