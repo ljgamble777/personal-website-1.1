@@ -14,6 +14,8 @@ import (
 var staticDir = flag.String("static", "./static", "directory where static files are stored")
 var config = flag.String("config", "dev", "configuration to run (dev or prod)")
 
+const localPort = ":80"
+
 func main() {
 	flag.Parse()
 
@@ -21,7 +23,8 @@ func main() {
 	http.Handle("/", handlers.LoggingHandler(os.Stdout, fs))
 
 	if *config == "dev" {
-		log.Fatal(http.ListenAndServe(":80", nil))
+		log.Printf("running at http://localhost%v", localPort)
+		log.Fatal(http.ListenAndServe(localPort, nil))
 	} else if *config == "prod" {
 		certManager := autocert.Manager{
 			Prompt:     autocert.AcceptTOS,
