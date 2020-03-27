@@ -10,6 +10,15 @@
     gtag('config', 'UA-161745919-1');
     </script>
 
+    <script>
+    function logClick(label) {
+        gtag('event', 'external_link_click', {
+            'event_category': 'external_link',
+            'event_label': label
+        });
+    }
+    </script>
+
     <title>Henry Fisher</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="appl-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
@@ -38,27 +47,27 @@
         <div class="links">
             <h4>Some Links</h4>
             <!-- data-label attribute is used for the event_label property in tracking which links are getting clicked -->
-            <a href="https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" data-label="meditations on moloch">Meditations On Moloch</a> by Scott Alexander<br>
-            <a href="https://www.youtube.com/watch?v=pW-SOdj4Kkk" data-label="preventing_collapse_of_civilization">Preventing the Collapse of Civilization</a> by Jonathan Blow<br>
-            <a href="http://calteches.library.caltech.edu/51/2/CargoCult.htm" data-label="cargo_cult_science">Cargo Cult Science</a> by Richard Feynman<br>
-            <a href="https://tonsky.me/blog/disenchantment/" data-label="software_disenchantment">Software disenchantment</a> by Nikita Prokopov<br>
-            <a href="https://medium.com/@samo.burja/great-founder-theory-93751e25c173" data-label="great_founder_theory">Great Founder Theory</a> by Samo Burja<br>
-            <a href="http://wolftivy.com/incharge/" data-label="no_really_what_if_you_were_in_charge">No Really, What If You Were In Charge?</a> by Wolf Tivy<br>
-            My <a href="https://open.spotify.com/playlist/02DnoQZrd0N0z0jshaATHM?si=GbmPuk6ZTS-PQyW-_-2ZwA" data-label="great_songs_playlist">Great Songs</a> playlist<br>
-            <a href="https://www.youtube.com/watch?v=NUbqNxcU8cY" data-label="in_rainbows_ftb">In Rainbows – From The Basement</a> by Radiohead<br>
-            <a href="https://twitter.com/wrathofgnon/status/883181352933236736" data-label="traditional_urbanism">Traditional Urbanism</a> by Wrath Of Gnon<br>
-            <a href="https://www.google.com/books/edition/Persecution_and_the_Art_of_Writing/ly-tHLRoKZwC?hl=en&gbpv=1&pg=PA22&printsec=frontcover" data-label="persecution_and_the_art_of_writing">Persecution and the Art of Writing</a> by Leo Strauss<br>
-            <a href="http://theindicter.com/military-to-military-seymour-seymour-m-hersh-on-us-intelligence-sharing-in-the-syrian-war/" data-label="military_to_military">Military To Military</a> by Seymour Hersch<br>
-            <a href="https://www.espn.com/espn/eticket/story?page=adams" data-label="ernie_adams">Who is Ernie Adams?</a><br>
-            <a href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/" data-label="what_is_code">What Is Code?</a> by Paul Ford<br>
-            <a href="https://soundcloud.com/henryperson/gotta-be-with-you" data-label="gotta_be_with_you">Gotta Be With You</a> by Jew and a Half Men<br>
-            <a href="https://www.youtube.com/watch?v=x2mLfaozia8" data-label="lycurgus_cup">The Lycurgus Cup</a> by Samo Burja<br>
-            <a href="https://www.youtube.com/watch?v=9CH1WkO0msY" data-label="videotape_early">Videotape (early version)</a> by Radiohead<br>
-            <a href="https://www.youtube.com/watch?v=BOn919FtA8k" data-label="angelina">Angelina</a> by The Other Favorites<br>
-            <a href="http://jsomers.net/blog/dictionary" data-label="wrong_dictionary">You're probably using the wrong dictionary</a> by James Somers<br>
-            <a href="https://www.youtube.com/watch?v=_QSbRqHa7qc" data-label="super_bowl_51">Super Bowl 51</a><br>
-            <a href="https://dominiccummings.files.wordpress.com/2018/09/20180904-arpa-parc-paper1.pdf" data-label="arpa_parc_science_uk_strategy">On the ARPA/PARC 'Dream Machine', science funding, high performance, and UK national strategy</a> by Dominic Cummings<br>
-            <a href="https://patrickcollison.com/fast" data-label="fast_projects">Fast Projects</a> by Patrick Collison<br>
+            <a href="https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" onclick="logClick('meditations_on_moloch')">Meditations On Moloch</a> by Scott Alexander<br>
+            <a href="https://www.youtube.com/watch?v=pW-SOdj4Kkk" onclick="logClick('preventing_collapse_of_civilization')">Preventing the Collapse of Civilization</a> by Jonathan Blow<br>
+            <a href="http://calteches.library.caltech.edu/51/2/CargoCult.htm" onclick="logClick('cargo_cult_science')">Cargo Cult Science</a> by Richard Feynman<br>
+            <a href="https://tonsky.me/blog/disenchantment/" onclick="logClick('software_disenchantment')">Software disenchantment</a> by Nikita Prokopov<br>
+            <a href="https://medium.com/@samo.burja/great-founder-theory-93751e25c173" onclick="logClick('great_founder_theory')">Great Founder Theory</a> by Samo Burja<br>
+            <a href="http://wolftivy.com/incharge/" onclick="logClick('no_really_what_if_you_were_in_charge')">No Really, What If You Were In Charge?</a> by Wolf Tivy<br>
+            My <a href="https://open.spotify.com/playlist/02DnoQZrd0N0z0jshaATHM?si=GbmPuk6ZTS-PQyW-_-2ZwA" onclick="logClick('great_songs_playlist')">Great Songs</a> playlist<br>
+            <a href="https://www.youtube.com/watch?v=NUbqNxcU8cY" onclick="logClick('in_rainbows_ftb')">In Rainbows – From The Basement</a> by Radiohead<br>
+            <a href="https://twitter.com/wrathofgnon/status/883181352933236736" onclick="logClick('traditional_urbanism')">Traditional Urbanism</a> by Wrath Of Gnon<br>
+            <a href="https://www.google.com/books/edition/Persecution_and_the_Art_of_Writing/ly-tHLRoKZwC?hl=en&gbpv=1&pg=PA22&printsec=frontcover" onclick="logClick('persecution_and_the_art_of_writing')">Persecution and the Art of Writing</a> by Leo Strauss<br>
+            <a href="http://theindicter.com/military-to-military-seymour-seymour-m-hersh-on-us-intelligence-sharing-in-the-syrian-war/" onclick="logClick('military_to_military')">Military To Military</a> by Seymour Hersch<br>
+            <a href="https://www.espn.com/espn/eticket/story?page=adams" onclick="logClick('ernie_adams')">Who is Ernie Adams?</a><br>
+            <a href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/" onclick="logClick('what_is_code')">What Is Code?</a> by Paul Ford<br>
+            <a href="https://soundcloud.com/henryperson/gotta-be-with-you" onclick="logClick('gotta_be_with_you')">Gotta Be With You</a> by Jew and a Half Men<br>
+            <a href="https://www.youtube.com/watch?v=x2mLfaozia8" onclick="logClick('lycurgus_cup')">The Lycurgus Cup</a> by Samo Burja<br>
+            <a href="https://www.youtube.com/watch?v=9CH1WkO0msY" onclick="logClick('videotape_early')">Videotape (early version)</a> by Radiohead<br>
+            <a href="https://www.youtube.com/watch?v=BOn919FtA8k" onclick="logClick('angelina')">Angelina</a> by The Other Favorites<br>
+            <a href="http://jsomers.net/blog/dictionary" onclick="logClick('wrong_dictionary')">You're probably using the wrong dictionary</a> by James Somers<br>
+            <a href="https://www.youtube.com/watch?v=_QSbRqHa7qc" onclick="logClick('super_bowl_51')">Super Bowl 51</a><br>
+            <a href="https://dominiccummings.files.wordpress.com/2018/09/20180904-arpa-parc-paper1.pdf" onclick="logClick('arpa_parc_science_uk_strategy')">On the ARPA/PARC 'Dream Machine', science funding, high performance, and UK national strategy</a> by Dominic Cummings<br>
+            <a href="https://patrickcollison.com/fast" onclick="logClick('fast_projects')">Fast Projects</a> by Patrick Collison<br>
         </div>
     </div>
     
@@ -73,6 +82,5 @@
             document.getElementById("date").innerHTML = `${month} ${day}, ${year}`
         </script>
     </footer>
-<script src="ga.js"></script>
 </body>
 </html>
