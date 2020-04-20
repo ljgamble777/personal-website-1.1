@@ -4,18 +4,22 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161745919-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-161745919-1');
+    if (document.location.hostname.search("henrywfisher.com") !== -1) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161745919-1');
+    }
     </script>
 
     <script>
     function logClick(label) {
-        gtag('event', 'external_link_click', {
-            'event_category': 'external_link',
-            'event_label': label
-        });
+        if (document.location.hostname.search("henrywfisher.com") !== -1) {
+            gtag('event', 'external_link_click', {
+                'event_category': 'external_link',
+                'event_label': label
+            });
+        }
     }
     </script>
 
@@ -40,16 +44,16 @@
     <header>
         <h2>Henry Fisher</h2>
     </header>
-    
-    <div class="content"> 
+
+    <div class="content">
         <div class="about">
             <p>I am a software engineer and guitarist. Maybe I'll start a blog someday.</p>
         </div>
 
         <div class="icons">
-            <a href="https://github.com/henryperson/"><img class="icon" src="/img/github.svg"></a>
-            <a href="https://www.instagram.com/henrywfisher/"><img class="icon" src="/img/instagram.svg"></a>
-            <a href="https://www.youtube.com/channel/UC7lVYDC9Q7YzOvyLhsbhbEg"><img class="icon" src="/img/youtube.svg"></a>
+            <a href="https://github.com/henryperson/" onClick="logClick('github')"><img class="icon" src="/img/github.svg"></a>
+            <a href="https://www.instagram.com/henrywfisher/" onClick="logClick('instagram')"><img class="icon" src="/img/instagram.svg"></a>
+            <a href="https://www.youtube.com/channel/UC7lVYDC9Q7YzOvyLhsbhbEg" onClick="logClick('youtube')"><img class="icon" src="/img/youtube.svg"></a>
         </div>
 
         <div class="links">
@@ -61,6 +65,7 @@
             <a href="https://tonsky.me/blog/disenchantment/" onclick="logClick('software_disenchantment')">Software disenchantment</a> by Nikita Prokopov<br>
             <a href="https://medium.com/@samo.burja/great-founder-theory-93751e25c173" onclick="logClick('great_founder_theory')">Great Founder Theory</a> by Samo Burja<br>
             <a href="http://wolftivy.com/incharge/" onclick="logClick('no_really_what_if_you_were_in_charge')">No Really, What If You Were In Charge?</a> by Wolf Tivy<br>
+            <a href="https://twitter.com/michaelcurzi/status/1252028071416225792" onClick="logClick('augustus_succession')">Augustus' Succesion Crisis</a> by Michael Curzi<br>
             My <a href="https://open.spotify.com/playlist/02DnoQZrd0N0z0jshaATHM?si=GbmPuk6ZTS-PQyW-_-2ZwA" onclick="logClick('great_songs_playlist')">Great Songs</a> playlist<br>
             <a href="https://www.youtube.com/watch?v=NUbqNxcU8cY" onclick="logClick('in_rainbows_ftb')">In Rainbows – From The Basement</a> by Radiohead<br>
             <a href="https://twitter.com/wrathofgnon/status/883181352933236736" onclick="logClick('traditional_urbanism')">Traditional Urbanism</a> by Wrath Of Gnon<br>
@@ -78,7 +83,7 @@
             <a href="https://archive.org/details/BeatlesAnthology" onClick="logClick('beatles_anthology')">The Beatles Anthology</a><br>
         </div>
     </div>
-    
+
     <footer>
         Last updated: <span id="date"></span>
         <script>
