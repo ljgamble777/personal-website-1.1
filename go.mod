@@ -1,6 +1,6 @@
 module personal-website
 
-go 1.14
+go 1.16
 
 require (
 	github.com/gorilla/handlers v1.4.2

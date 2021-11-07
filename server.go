@@ -2,7 +2,9 @@ package main
 
 import (
 	"crypto/tls"
+	"embed"
 	"flag"
+	"io/fs"
 	"log"
 	"net/http"
 	"os"
@@ -10,6 +12,9 @@ import (
 	"github.com/gorilla/handlers"
 	"golang.org/x/crypto/acme/autocert"
 )
+
+//go:embed static/*
+var static embed.FS
 
 var staticDir = flag.String("static", "./static", "directory where static files are stored")
 var config = flag.String("config", "dev", "configuration to run (dev or prod)")
@@ -19,7 +24,12 @@ const localPort = ":80"
 func main() {
 	flag.Parse()
 
-	fs := http.FileServer(http.Dir(*staticDir))
+	root, err := fs.Sub(static, "static")
+	if err != nil {
+		log.Fatalf("could not get sub static directory: %v\n", err)
+	}
+
+	fs := http.FileServer(http.FS(root))
 	http.Handle("/", handlers.LoggingHandler(os.Stdout, fs))
 
 	if *config == "dev" {
