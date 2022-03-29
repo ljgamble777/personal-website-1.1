@@ -1,6 +1,6 @@
 # Personal Website
 
-This code runs my website: [https://henrywfisher.com](https://henrywfisher.com)
+This code runs my website: [https://ljgamble.com](https://ljgamble.com)
 
 Components
 - The web server is written in Go using the [net/http](https://golang.org/pkg/net/http/) package.
