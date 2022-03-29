@@ -38,7 +38,7 @@ func main() {
 	} else if *config == "prod" {
 		certManager := autocert.Manager{
 			Prompt:     autocert.AcceptTOS,
-			HostPolicy: autocert.HostWhitelist("henrywfisher.com", "www.henrywfisher.com"),
+			HostPolicy: autocert.HostWhitelist("ljgamble.com", "www.ljgamble.com"),
 			Cache:      autocert.DirCache("."),
 		}
 
