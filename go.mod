@@ -1,4 +1,4 @@
-module personal-website
+module personal-website-1
 
 go 1.16
 
